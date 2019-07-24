@@ -14,6 +14,7 @@ O que queremos avaliar aqui é:
 - Organização de componentes;
 - Seu conhecimento sobre Redux;
 - Como irá disponibilizar os dados (json) remotamente para o aplicativo;
+- Organização de commits
 
 # Features
 
