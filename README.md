@@ -42,11 +42,11 @@ Abaixo podemos ver algumas telas de exemplo para o desenvolvimento. para ter ace
 
 ### Fluxo de grid de filmes
 
-![Tela 1](assets/1.png)
-![Tela 2](assets/2.png)
-![Tela 3](assets/3.png)
-![Tela 4](assets/4.png)
-![Tela 5](assets/5.png)
+<img src="assets/1.png" width="200">
+<img src="assets/2.png" width="200">
+<img src="assets/3.png" width="200">
+<img src="assets/4.png" width="200">
+<img src="assets/5.png" width="200">
 
 ## **Processo de submissão**
 
