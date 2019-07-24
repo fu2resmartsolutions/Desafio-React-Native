@@ -1,17 +1,19 @@
 # Fu2re Smart Solutions - Desafio React Native
 
-Você deverá criar um app utilizando este [layout](https://xd.adobe.com/view/a82f8c6c-3fee-441a-71ad-7456f6eba874-de1e/).
+### Bem vindo ao Desafio React Native da Fu2re.
+
+Você deverá criar um app utilizando o layout fornecido por nós.
 Disponibilizamos um aquivo json contendo toda a estrutura e dados que você irá precisar para montar a aplicação.
 
 Pense no desafio como uma oportunidade de mostrar todo o seu conhecimento.
 
 O que queremos avaliar aqui é:
 
-- Consumo de APIs
-- Habilidade para criar app seguindo o layout
-- Organização de componentes
-- Seu conhecimento sobre Redux
-- Como irá lidar para deixar a api disponível para consumo no app.
+- Consumo de APIs;
+- Habilidade de construção de telas seguindo o layout;
+- Organização de componentes;
+- Seu conhecimento sobre Redux;
+- Como irá lidar para deixar a api disponível para consumo no app;
 
 # Features
 
@@ -55,11 +57,8 @@ O processo de Pull Request funciona da seguinte maneira:
 
 1. Faça um fork deste repositório (não clonar direto!);
 2. Faça seu projeto neste fork;
-3. Commit e suba as alterações para o **SEU** fork;
+3. Commit e suba as alterações para o **seu** fork;
 4. Pela interface do Github, envie um Pull Request.
+5. Responda o email para o RH informando que terminou o desafio e informe o link do repositório.
 
 Deixe o fork público para facilitar a inspeção do código.
-
-### **ATENÇÃO**
-
-Não tente fazer o PUSH diretamente para ESTE repositório!
