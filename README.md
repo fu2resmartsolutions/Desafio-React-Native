@@ -40,13 +40,11 @@ O que queremos avaliar aqui é:
 
 Abaixo podemos ver algumas telas de exemplo para o desenvolvimento. para ter acesso aos Adobe XD, você poderá utilizar [este link ](https://xd.adobe.com/view/a82f8c6c-3fee-441a-71ad-7456f6eba874-de1e/). Mas se o seu lado designer falar mais alto, pode nos surpreender!
 
-### Fluxo de grid de filmes
-
-<img src="assets/1.png" width="200">
-<img src="assets/2.png" width="200">
+<img src="assets/1.png" align="left" width="200">
+<img src="assets/2.png" align="left" width="200">
 <img src="assets/3.png" width="200">
-<img src="assets/4.png" width="200">
-<img src="assets/5.png" width="200">
+<img src="assets/4.png" align="left" width="200">
+<img src="assets/5.png"  width="200">
 
 ## **Processo de submissão**
 
