@@ -13,7 +13,7 @@ O que queremos avaliar aqui é:
 - Habilidade de construção de telas seguindo o layout;
 - Organização de componentes;
 - Seu conhecimento sobre Redux;
-- Como irá lidar para deixar a api disponível para consumo no app;
+- Como irá disponibilizar os dados (json) remotamente para o aplicativo;
 
 # Features
 
@@ -35,12 +35,13 @@ O que queremos avaliar aqui é:
 - Testes unitários;
 - Paginação com scroll infinito;
 - Animações em geral;
+- React Hooks
 
 # Layout
 
 ---
 
-Abaixo podemos ver algumas telas de exemplo para o desenvolvimento. para ter acesso aos Adobe XD, você poderá utilizar [este link ](https://xd.adobe.com/view/a82f8c6c-3fee-441a-71ad-7456f6eba874-de1e/). Mas se o seu lado designer falar mais alto, pode nos surpreender!
+Abaixo podemos ver algumas telas de exemplo para o desenvolvimento. para ter acesso ao Adobe XD, você poderá utilizar [este link ](https://xd.adobe.com/spec/feb31ec1-556f-4055-47e3-24c0f1cd2a59-8882/) para ver o spec e [este link ](https://xd.adobe.com/view/a82f8c6c-3fee-441a-71ad-7456f6eba874-de1e/) para acessar o protótipo. Mas se o seu lado designer falar mais alto, pode nos surpreender!
 
 <img src="assets/1.png" align="left" width="200">
 <img src="assets/2.png" align="left" width="200">
