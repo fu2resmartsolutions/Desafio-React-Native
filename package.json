@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "react": "16.8.6",
-    "react-native": "0.60.4",
+    "react-native": "0.60.2",
+    "react-native-snap-carousel": "^3.8.0",
     "react-redux": "^7.1.0-rc.1",
     "redux": "^4.0.4",
     "styled-components": "^4.3.2"
