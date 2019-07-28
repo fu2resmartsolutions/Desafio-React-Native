@@ -40,4 +40,6 @@ export const ProductFavoriteButton = styled.TouchableOpacity`
     height: 30px;
     border-radius: 15px;
     margin: 5px;
+    align-items: center;
+    justify-content: center;
 `;

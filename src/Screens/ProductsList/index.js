@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'; 
-import { View, FlatList, Text, TouchableOpacity } from 'react-native';
+import { FlatList, TouchableWithoutFeedback, Text } from 'react-native';
 import { 
     ProductOverview, 
     ProductImage, 
@@ -8,6 +8,8 @@ import {
     ProductPrice,
     ProductFavoriteButton
  } from './styles';
+ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
 
 export default function ProductsList() {
     const [products, setProducts] = useState([]);
@@ -24,24 +26,30 @@ export default function ProductsList() {
         setProducts(data);
     }
 
-    // O segundo parâmetro do useEffects é como se fosse um listener que ao 
-    // atualizar a variável, o useEffect é trigado, usando um array vazio, é inicializado após o componente montar
     useEffect(() => {
         fetchData();
     }, []);
     
     function renderProduct(product){
        return (
-        <ProductOverview>
+        <TouchableWithoutFeedback onPress={() => console.log('asdfasdf')}>
+            <ProductOverview>
             <ProductImage source={{ uri: product.item.images[0] }}>
-                <ProductFavoriteButton onPress={() => handleFavorite(product.item.id)}><Text>Favorite</Text></ProductFavoriteButton>
-                {/* <TouchableOpacity onPress={() => handleFavorite(product.item.id)}><Text>Favorite</Text></TouchableOpacity>  */}
+                <ProductFavoriteButton onPress={() => handleFavorite(product.item.id)}>
+                    {product.item.favorite &&
+                        <Icon size={20} color="red" name="heart" />
+                    }
+                    {!product.item.favorite &&
+                        <Icon size={20} color="red" name="heart-outline" />
+                    }
+                </ProductFavoriteButton>
             </ProductImage>
-            <ProductFooter> 
-                <ProductTitle>{product.item.name} { product.item.favorite && <Text> (Favorito) </Text> }</ProductTitle> 
-                <ProductPrice>R$: {product.item.price}</ProductPrice>
-             </ProductFooter>
-        </ProductOverview>
+                <ProductFooter> 
+                    <ProductTitle>{product.item.name}</ProductTitle> 
+                    <ProductPrice>R$: {product.item.price}</ProductPrice>
+                </ProductFooter>
+            </ProductOverview>
+        </TouchableWithoutFeedback>
        )
     }
 
