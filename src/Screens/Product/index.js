@@ -1,6 +1,6 @@
 import React from 'react';
 import { ProductTitle, ProductPrice, ProductDetails } from './styles';
-import { ProductCarousel } from '../index';
+import { ProductCarousel } from '../../Components/index';
 
 function Product() {
     return (

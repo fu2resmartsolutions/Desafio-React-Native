@@ -11,9 +11,9 @@ import {
  import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
-export default function ProductsList() {
+export default function ProductsList({props}) {
     const [products, setProducts] = useState([]);
-    
+    console.log(props)
     async function fetchData() {
         const response = await fetch('https://raw.githubusercontent.com/fu2resmartsolutions/Desafio-React-Native/master/assets/data.json') ;
         const data = await response.json();
@@ -32,7 +32,7 @@ export default function ProductsList() {
     
     function renderProduct(product){
        return (
-        <TouchableWithoutFeedback onPress={() => console.log('asdfasdf')}>
+        <TouchableWithoutFeedback onPress={() => props.navigation.navigate('Product')}>
             <ProductOverview>
             <ProductImage source={{ uri: product.item.images[0] }}>
                 <ProductFavoriteButton onPress={() => handleFavorite(product.item.id)}>
