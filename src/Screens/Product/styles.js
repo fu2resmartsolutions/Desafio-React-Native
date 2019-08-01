@@ -1,4 +1,6 @@
 import styled from 'styled-components/native';
+import { Dimensions } from 'react-native';
+
 
 export const ProductTitle = styled.Text`
     font-size: 20px;
@@ -21,4 +23,28 @@ export const ProductDetails = styled.Text`
 
 export const ProductContainer = styled.View`
     margin: 40px;
+`;
+
+export const ProductBar = styled.View`
+    border-bottom-color: #E87410;
+    border-bottom-width: 1px;
+    width: 100px;
+    margin-bottom: 10px;
+`;
+
+export const ProductBarContainer = styled.View`
+    justify-content: space-around;
+    flex-direction: row;
+    z-index: 99;
+    position: absolute;
+    height: 20px;
+`;
+
+export const SeeMoreButton = styled.TouchableOpacity`
+
+`;
+
+export const SeeMoreButtonText = styled.Text`
+    color: #E87410;
+    margin: 0 5px 0 5px;
 `;

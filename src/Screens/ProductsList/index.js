@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'; 
 import { FlatList, TouchableWithoutFeedback, Text } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux';
 import { 
     ProductOverview, 
     ProductImage, 
@@ -11,9 +12,12 @@ import {
  import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
+
 export default function ProductsList({props}) {
-    const [products, setProducts] = useState([]);
-    console.log(props)
+    const [loading, setLoading] = useState(true);
+    const productsList = useSelector(state => state.data);
+    const dispatch = useDispatch();
+    
     async function fetchData() {
         const response = await fetch('https://raw.githubusercontent.com/fu2resmartsolutions/Desafio-React-Native/master/assets/data.json') ;
         const data = await response.json();
@@ -22,8 +26,9 @@ export default function ProductsList({props}) {
         data.forEach((item, i) => {
             item.id = i + 1;
             item.favorite = false;
+            dispatch({ type: 'ADD_PRODUCTS', products: item });
         });
-        setProducts(data);
+        setLoading(false)
     }
 
     useEffect(() => {
@@ -31,8 +36,9 @@ export default function ProductsList({props}) {
     }, []);
     
     function renderProduct(product){
+        console.log(productsList);
        return (
-        <TouchableWithoutFeedback onPress={() => props.navigation.navigate('Product')}>
+        <TouchableWithoutFeedback onPress={(product) => props.navigation.navigate('Product', { 'product' : product })}>
             <ProductOverview>
             <ProductImage source={{ uri: product.item.images[0] }}>
                 <ProductFavoriteButton onPress={() => handleFavorite(product.item.id)}>
@@ -55,13 +61,18 @@ export default function ProductsList({props}) {
 
     // Vai favoritar um produto
     function handleFavorite(id){
-        const newProducts = products.map(product => {
-            return product.id === id ? { ...product, favorite: !product.favorite } : product
-        });
-        setProducts(newProducts);
+        console.log(id);
+        dispatch({ type: 'FAVORITE_PRODUCT', id: id })
+        // const newProducts = products.map(product => {
+        //     return product.id === id ? { ...product, favorite: !product.favorite } : product
+        // });
+        // setProducts(newProducts);
     }
-
     return(
-        <FlatList columnWrapperStyle={{ justifyContent: 'space-around' }} data={products} renderItem={renderProduct} keyExtractor={(item, index) => index.toString()} numColumns={2} />
+        !loading 
+        ?
+            <FlatList columnWrapperStyle={{ justifyContent: 'space-around' }} data={productsList} renderItem={renderProduct} keyExtractor={(item, index) => index.toString()} numColumns={2} />
+        :
+            <Text>Carregando...</Text>
     );    
 }

@@ -1,20 +1,18 @@
 import { createStore } from 'redux'; 
 
 const INITIAL_STATE = {
-    data: [
-        'Máquina de lavar 1',
-        'Máquina de lavar 2',
-        'Máquina de lavar 3',
-        'Máquina de lavar 4',
-        'Máquina de lavar 5',
-    ]
+    data: [],
+    favorites: []
 };
 
 // Reducers
-function products(state, action) {
+function products(state = INITIAL_STATE, action) {
     switch(action.type) {
         case 'FAVORITE_PRODUCT':
-            return { ...state, data: [ ...state.data, action.title ]};
+            console.warn('FAVORITANDO ID: ', action.id)
+            return { ...state, favorites: [ ...state.favorites, action.id ]};
+        case 'ADD_PRODUCTS' :
+            return {...state, data: [...state.data, action.products ]};
         default: 
             return state;
     }
