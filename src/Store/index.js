@@ -9,8 +9,9 @@ const INITIAL_STATE = {
 function products(state = INITIAL_STATE, action) {
     switch(action.type) {
         case 'FAVORITE_PRODUCT':
-            console.warn('FAVORITANDO ID: ', action.id)
-            return { ...state, favorites: [ ...state.favorites, action.id ]};
+                console.warn(!state.data[action.index].favorite)
+                state.data[action.index].favorite = !state.data[action.index].favorite;
+                return{...state, data: [...state.data, state.data[action.index]]};
         case 'ADD_PRODUCTS' :
             return {...state, data: [...state.data, action.products ]};
         default: 

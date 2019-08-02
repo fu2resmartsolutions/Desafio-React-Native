@@ -16,6 +16,7 @@ import {
 export default function ProductsList({props}) {
     const [loading, setLoading] = useState(true);
     const productsList = useSelector(state => state.data);
+    const favorites = useSelector(state => state.favorites);
     const dispatch = useDispatch();
     
     async function fetchData() {
@@ -36,7 +37,6 @@ export default function ProductsList({props}) {
     }, []);
     
     function renderProduct(product){
-        console.log(productsList);
        return (
         <TouchableWithoutFeedback onPress={(product) => props.navigation.navigate('Product', { 'product' : product })}>
             <ProductOverview>
@@ -61,10 +61,15 @@ export default function ProductsList({props}) {
 
     // Vai favoritar um produto
     function handleFavorite(id){
-        console.log(id);
-        dispatch({ type: 'FAVORITE_PRODUCT', id: id })
-        // const newProducts = products.map(product => {
-        //     return product.id === id ? { ...product, favorite: !product.favorite } : product
+        productsList.map(product => {
+            if(product.id === id) {
+                dispatch({ type: 'FAVORITE_PRODUCT', index: id - 1 });
+            }
+        });
+
+        // dispatch({ type: 'FAVORITE_PRODUCT', id: id });
+        // const newProducts = productsList.map(product => {
+        //     return product.id === favorites ? { ...product, favorite: !product.favorite } : product
         // });
         // setProducts(newProducts);
     }
