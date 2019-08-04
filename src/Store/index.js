@@ -1,5 +1,6 @@
 import { createStore } from 'redux'; 
 
+
 const INITIAL_STATE = {
     data: [],
     favorites: []
@@ -9,9 +10,8 @@ const INITIAL_STATE = {
 function products(state = INITIAL_STATE, action) {
     switch(action.type) {
         case 'FAVORITE_PRODUCT':
-                console.warn(!state.data[action.index].favorite)
-                state.data[action.index].favorite = !state.data[action.index].favorite;
-                return{...state, data: [...state.data, state.data[action.index]]};
+                return state.data.map(product =>
+                    product.id === action.id ? {...product, favorite: !product.favorite } : product )
         case 'ADD_PRODUCTS' :
             return {...state, data: [...state.data, action.products ]};
         default: 
