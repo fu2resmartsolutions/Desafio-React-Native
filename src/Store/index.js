@@ -10,8 +10,14 @@ const INITIAL_STATE = {
 function products(state = INITIAL_STATE, action) {
     switch(action.type) {
         case 'FAVORITE_PRODUCT':
-                return state.data.map(product =>
-                    product.id === action.id ? {...product, favorite: !product.favorite } : product )
+                const newData = state.data.map((product, index) => {
+                    if(product.id === action.id) {
+                        return { ...product, favorite : !product.favorite }
+                    } else {
+                        return product
+                    }
+                });
+                return { ...state, data: [ ...newData ]}
         case 'ADD_PRODUCTS' :
             return {...state, data: [...state.data, action.products ]};
         default: 

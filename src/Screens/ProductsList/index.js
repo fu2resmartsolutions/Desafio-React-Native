@@ -62,7 +62,7 @@ export default function ProductsList({props}) {
     // Vai favoritar um produto
     function handleFavorite(id){
         dispatch({ type: 'FAVORITE_PRODUCT', id });
-
+        
         // dispatch({ type: 'FAVORITE_PRODUCT', id: id });
         // const newProducts = productsList.map(product => {
         //     return product.id === favorites ? { ...product, favorite: !product.favorite } : product
