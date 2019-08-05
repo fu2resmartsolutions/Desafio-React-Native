@@ -35,40 +35,39 @@ export default function ProductsList({props}) {
     useEffect(() => {
         fetchData();
     }, []);
+
+    function goToProduct(product) {
+        props.navigation.navigate('Product', { product, props });
+    }
     
     function renderProduct(product){
        return (
-        <TouchableWithoutFeedback onPress={(product) => props.navigation.navigate('Product', { 'product' : product })}>
-            <ProductOverview>
-            <ProductImage source={{ uri: product.item.images[0] }}>
-                <ProductFavoriteButton onPress={() => handleFavorite(product.item.id)}>
-                    {product.item.favorite &&
-                        <Icon size={20} color="red" name="heart" />
-                    }
-                    {!product.item.favorite &&
-                        <Icon size={20} color="red" name="heart-outline" />
-                    }
-                </ProductFavoriteButton>
-            </ProductImage>
-                <ProductFooter> 
-                    <ProductTitle>{product.item.name}</ProductTitle> 
-                    <ProductPrice>R$: {product.item.price}</ProductPrice>
-                </ProductFooter>
-            </ProductOverview>
-        </TouchableWithoutFeedback>
+            <TouchableWithoutFeedback onPress={() => goToProduct(product)}>
+                <ProductOverview>
+                <ProductImage source={{ uri: product.item.images[0] }}>
+                    <ProductFavoriteButton onPress={() => handleFavorite(product.item.id)}>
+                        {product.item.favorite &&
+                            <Icon size={20} color="red" name="heart" />
+                        }
+                        {!product.item.favorite &&
+                            <Icon size={20} color="red" name="heart-outline" />
+                        }
+                    </ProductFavoriteButton>
+                </ProductImage>
+                    <ProductFooter> 
+                        <ProductTitle>{product.item.name}</ProductTitle> 
+                        <ProductPrice>R$: {product.item.price}</ProductPrice>
+                    </ProductFooter>
+                </ProductOverview>
+            </TouchableWithoutFeedback>
        )
     }
 
     // Vai favoritar um produto
     function handleFavorite(id){
         dispatch({ type: 'FAVORITE_PRODUCT', id });
-        
-        // dispatch({ type: 'FAVORITE_PRODUCT', id: id });
-        // const newProducts = productsList.map(product => {
-        //     return product.id === favorites ? { ...product, favorite: !product.favorite } : product
-        // });
-        // setProducts(newProducts);
     }
+
     return(
         !loading 
         ?

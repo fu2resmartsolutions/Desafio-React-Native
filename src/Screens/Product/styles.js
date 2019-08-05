@@ -48,3 +48,9 @@ export const SeeMoreButtonText = styled.Text`
     color: #E87410;
     margin: 0 5px 0 5px;
 `;
+
+export const CarouselContainer = styled.View`
+    align-items: center; 
+    justify-content: center;
+    margin-top: 10px;
+`;

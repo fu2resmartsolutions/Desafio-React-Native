@@ -1,18 +1,27 @@
 import React from 'react';
-import { ProductTitle } from './styles';
 import Carousel from 'react-native-snap-carousel';
+import { View, Image, Text, Dimensions } from 'react-native'; 
+const { width } = Dimensions.get('window');
 
-function  _renderItem ({item, index}) {
-   return (
-       <View style={styles.slide}>
-           <Text style={styles.title}>{ item.title }</Text>
-       </View>
-   );
+function  _renderItem (item) {
+  return (
+    item ?
+      <View style={{ flex: 1 }}>
+        <Image source={{uri: item.item}} style={{ flex: 1, width: width / 2 , height: 200 }} />
+      </View>
+    :
+    <Text>Carregando...</Text>
+  );
 }
 
-function ProductCarousel() {
+function ProductCarousel(images) {
    return(
-     <ProductTitle />
+    <Carousel
+      data={images.images}
+      renderItem={_renderItem}
+      sliderWidth={width}
+      itemWidth={width / 2}
+    />
    );
 };
 
