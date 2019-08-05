@@ -75,11 +75,11 @@ function Product(props) {
                 <ProductTitle>{itemState.name}</ProductTitle>
                 <ProductPrice>R$ {itemState.price}</ProductPrice>
                 <ViewMoreText
-                    numberOfLines={10}
+                    numberOfLines={10}s
                     renderViewMore={renderViewMore}
                     renderViewLess={renderViewLess}
-                    // afterExpand={() => onExpand()}
-                    // afterCollapse={() => onColapse()}
+                    afterExpand={() => setTimeout(() =>  scrollRef.current.scrollResponderScrollToEnd({ animated: true }), 100) }
+                    afterCollapse={() => setTimeout(() =>  scrollRef.current.scrollResponderScrollTo({x: 0, y: 0 , animated: true }), 100) }
                 >
                     <ProductDetails>{itemState.description}</ProductDetails>
                 </ViewMoreText>
