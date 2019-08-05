@@ -17,8 +17,8 @@ export const ProductPrice = styled.Text`
 export const ProductDetails = styled.Text`
     font-size: 15px;
     color: #4B4B4B;
-    text-align: center;
     margin: 10px 0 10px 0;
+    align-self: flex-start;
 `;
 
 export const ProductContainer = styled.View`
@@ -33,11 +33,9 @@ export const ProductBar = styled.View`
 `;
 
 export const ProductBarContainer = styled.View`
+    margin-top: 10px;
     justify-content: space-around;
     flex-direction: row;
-    z-index: 99;
-    position: absolute;
-    height: 20px;
 `;
 
 export const SeeMoreButton = styled.TouchableOpacity`
