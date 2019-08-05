@@ -5,9 +5,7 @@ import { ProductsList } from '../index';
 
 function Home(props) {
     return(
-        <Provider store={store}>
-            <ProductsList props={props} />
-        </Provider>
+        <ProductsList props={props} />
     )
 }
 

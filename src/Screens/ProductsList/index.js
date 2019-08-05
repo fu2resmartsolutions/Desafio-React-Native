@@ -16,7 +16,6 @@ import {
 export default function ProductsList({props}) {
     const [loading, setLoading] = useState(true);
     const productsList = useSelector(state => state.data);
-    const favorites = useSelector(state => state.favorites);
     const dispatch = useDispatch();
     
     async function fetchData() {

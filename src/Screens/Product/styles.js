@@ -1,6 +1,4 @@
 import styled from 'styled-components/native';
-import { Dimensions } from 'react-native';
-
 
 export const ProductTitle = styled.Text`
     font-size: 20px;
@@ -22,7 +20,7 @@ export const ProductDetails = styled.Text`
 `;
 
 export const ProductContainer = styled.View`
-    margin: 40px;
+    margin: 20px 40px 20px 40px;
 `;
 
 export const ProductBar = styled.View`
@@ -50,5 +48,25 @@ export const SeeMoreButtonText = styled.Text`
 export const CarouselContainer = styled.View`
     align-items: center; 
     justify-content: center;
-    margin-top: 10px;
+    padding: 10px 0 20px 0;
+    border-bottom-color: #9D9D9D;
+    border-bottom-width: 1px;
+`;
+
+export const ButtonFavorite = styled.TouchableOpacity`
+    position:absolute;
+    background: white; 
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    border-width: 1;
+    border-color: #ddd;
+    border-bottom-width: 0;
+    shadow-color: #000;
+    shadow-opacity: 0.8;
+    shadow-radius: 2;
+    elevation: 1;
+    margin: 210px 50px;  /* 215 pois é o tamanho do componente de cima */
+    align-items: center;
+    justify-content: center;
 `;
